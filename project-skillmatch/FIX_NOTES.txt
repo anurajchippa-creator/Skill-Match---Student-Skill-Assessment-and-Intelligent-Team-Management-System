@@ -1,0 +1,32 @@
+========================================
+  SkillMatch – Quick Fixes
+========================================
+
+1. Start backend:
+   cd backend
+   mvn clean spring-boot:run
+
+2. Start frontend (new terminal):
+   cd frontend
+   mvn compile exec:java
+
+3. Demo logins:
+   student1@college.edu  /  password123
+   faculty1@college.edu  /  password123
+
+----------------------------------------
+IF RECOMMENDATIONS SHOW "Unknown column id":
+
+The project_required_skills table is outdated.
+Fix it by running this in MySQL:
+
+   mysql -u root -p
+   USE skillmatch;
+   DROP TABLE IF EXISTS project_required_skills;
+   (then restart the backend – Hibernate will recreate it)
+
+OR run the script:
+   mysql -u root -p < sql/FIX_PROJECT_REQUIRED_SKILLS.sql
+
+Then restart backend and try Recommendations again.
+----------------------------------------

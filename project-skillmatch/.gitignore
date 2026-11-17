@@ -1,0 +1,17 @@
+# Maven build files
+**/target/
+
+# VS Code settings
+.vscode/
+
+# IDE files
+.idea/
+*.iml
+
+# Environment and secret files
+.env
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
